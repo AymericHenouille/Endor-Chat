@@ -1,0 +1,12 @@
+@use "../../../../../../../../node_modules/bulma/sass/helpers/color" as color;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+  cursor: pointer;
+  &:hover {
+    @extend .has-background-black;
+  }
+}

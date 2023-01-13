@@ -1,0 +1,12 @@
+<div class="collumn has-background-dark has-text-white">
+  <div class="rooms-box">
+    <ng-container *ngIf="rooms; else loading">
+      <app-room-item *ngFor="let room of rooms" [room]="room"></app-room-item>
+    </ng-container>
+  </div>
+  <app-add-room-button (newRoom)="addRoom($event)"></app-add-room-button>
+</div>
+
+<ng-template #loading>
+  <div class="custom-loader"></div>
+</ng-template>

@@ -1,0 +1,31 @@
+<div class="block">
+  <h1 class="title is-6">Signin to chat app</h1>
+</div>
+<div class="block">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" placeholder="Email input" formControlName="email">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" type="password" placeholder="Password" formControlName="password">
+      </div>
+    </div>
+    <p class="help is-danger" *ngIf="error">{{ error }}</p>
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <a class="level-item">I forgot my password</a>
+        </div>
+      </div>
+      <div class="level-right">
+        <button type="button" [routerLink]="['/auth', 'signup']" class="level-item button is-info">I'm not register yet</button>
+        <button type="ubmit" class="level-item button is-primary">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

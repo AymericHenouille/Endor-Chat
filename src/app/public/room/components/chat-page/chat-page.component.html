@@ -1,0 +1,6 @@
+<app-chat-menu [room]="room" class="block">
+  <div class="block chat-content container is-max-desktop" *ngIf="room && userName">
+    <app-chat-message-flow [roomId]="room.id ?? ''" [userName]="userName"></app-chat-message-flow>
+    <app-chat-input [roomId]="room.id ?? ''" [userName]="userName"></app-chat-input>
+  </div>
+</app-chat-menu>

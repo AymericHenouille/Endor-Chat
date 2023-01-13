@@ -1,0 +1,15 @@
+<button class="button is-primary" (click)="showModal = true">
+  New Room
+</button>
+
+<app-modal *ngIf="showModal" modalTitle="Create new Room" (close)="showModal = false">
+  <div class="field">
+    <span class="label">Room name</span>
+    <div class="control">
+      <input type="text" class="input" #input>
+    </div>
+  </div>
+  <button class="button is-info" (click)="createRoom(input.value)">
+    Create Room
+  </button>
+</app-modal>

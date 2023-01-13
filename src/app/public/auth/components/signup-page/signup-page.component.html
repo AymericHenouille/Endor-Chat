@@ -1,0 +1,36 @@
+<div class="block">
+  <h1 class="title is-6">Signup to chat app</h1>
+</div>
+<div class="block">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" placeholder="Email input" formControlName="email">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" type="password" placeholder="Password" formControlName="password">
+      </div>
+      <p class="help is-danger" *ngIf="passwordValidator && passwordControl?.touched">{{ passwordValidator }}</p>
+    </div>
+    <div class="field">
+      <label class="label">Confirm Password</label>
+      <div class="control">
+        <input class="input" type="password" placeholder="Password" formControlName="confirmPassword">
+      </div>
+      <p class="help is-danger" *ngIf="confirmPasswordValidator && confirmPasswordControl?.touched">{{ confirmPasswordValidator }}</p>
+    </div>
+    <p class="help is-danger" *ngIf="fieldMatchValidator">{{ fieldMatchValidator }}</p>
+    <p class="help is-danger" *ngIf="error">{{ error }}</p>
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        <button type="button" [routerLink]="['/auth', 'signin']" class="level-item button is-info">I have already an account</button>
+        <button type="ubmit" class="level-item button is-primary" [disabled]="form.invalid" >Register</button>
+      </div>
+    </div>
+  </form>
+</div>

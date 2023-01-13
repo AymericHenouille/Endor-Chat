@@ -1,0 +1,10 @@
+<div class="field has-addons">
+  <div class="control is-flex-grow-1">
+    <input [(ngModel)]="message" type="text" class="input is-medium" placeholder="Send message...">
+  </div>
+  <div class="control">
+    <button (click)="sendMessage()" class="button is-medium is-primary" [class.is-loading]="isLoading">
+      Send
+    </button>
+  </div>
+</div>
